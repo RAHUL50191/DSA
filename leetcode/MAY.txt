@@ -1,0 +1,4 @@
+10.vector<vector<int>> matrix(n,vector(n,0))
+15.tortoise and hare 
+	use two var/pointer fast and slow, perform task by one in slow and two in fast,if both encounter each other return condition
+	usefull in pointer, cycle,finding etc

@@ -1,0 +1,285 @@
+1.	#include <stdio.h>
+2.	#include <stdlib.h>
+3.	 
+4.	struct btnode
+5.	{
+6.	    int value;
+7.	    struct btnode *l;
+8.	    struct btnode *r;
+9.	}*root = NULL, *temp = NULL, *t2, *t1;
+10.	 
+11.	void delete1();
+12.	void insert();
+13.	void delete();
+14.	void inorder(struct btnode *t);
+15.	void create();
+16.	void search(struct btnode *t);
+17.	void preorder(struct btnode *t);
+18.	void postorder(struct btnode *t);
+19.	void search1(struct btnode *t,int data);
+20.	int smallest(struct btnode *t);
+21.	int largest(struct btnode *t);
+22.	 
+23.	int flag = 1;
+24.	 
+25.	void main()
+26.	{
+27.	    int ch;
+28.	 
+29.	    printf("\nOPERATIONS ---");
+30.	    printf("\n1 - Insert an element into tree\n");
+31.	    printf("2 - Delete an element from the tree\n");
+32.	    printf("3 - Inorder Traversal\n");
+33.	    printf("4 - Preorder Traversal\n");
+34.	    printf("5 - Postorder Traversal\n");
+35.	    printf("6 - Exit\n");
+36.	    while(1)
+37.	    {
+38.	        printf("\nEnter your choice : ");
+39.	        scanf("%d", &ch);
+40.	        switch (ch)
+41.	        {
+42.	        case 1:    
+43.	            insert();
+44.	            break;
+45.	        case 2:    
+46.	            delete();
+47.	            break;
+48.	        case 3:    
+49.	            inorder(root);
+50.	            break;
+51.	        case 4:    
+52.	            preorder(root);
+53.	            break;
+54.	        case 5:    
+55.	            postorder(root);
+56.	            break;
+57.	        case 6:    
+58.	            exit(0);
+59.	        default :     
+60.	            printf("Wrong choice, Please enter correct choice  ");
+61.	            break;    
+62.	        }
+63.	    }
+64.	}
+65.	 
+66.	/* To insert a node in the tree */
+67.	void insert()
+68.	{
+69.	    create();
+70.	    if (root == NULL) 
+71.	        root = temp;
+72.	    else    
+73.	        search(root);    
+74.	}
+75.	 
+76.	/* To create a node */
+77.	void create()
+78.	{
+79.	    int data;
+80.	 
+81.	    printf("Enter data of node to be inserted : ");
+82.	    scanf("%d", &data);
+83.	    temp = (struct btnode *)malloc(1*sizeof(struct btnode));
+84.	    temp->value = data;
+85.	    temp->l = temp->r = NULL;
+86.	}
+87.	 
+88.	/* Function to search the appropriate position to insert the new node */
+89.	void search(struct btnode *t)
+90.	{
+91.	    if ((temp->value > t->value) && (t->r != NULL))      /* value more than root node value insert at right */
+92.	        search(t->r);
+93.	    else if ((temp->value > t->value) && (t->r == NULL))
+94.	        t->r = temp;
+95.	    else if ((temp->value < t->value) && (t->l != NULL))    /* value less than root node value insert at left */
+96.	        search(t->l);
+97.	    else if ((temp->value < t->value) && (t->l == NULL))
+98.	        t->l = temp;
+99.	}
+100.	 
+101.	/* recursive function to perform inorder traversal of tree */
+102.	void inorder(struct btnode *t)
+103.	{
+104.	    if (root == NULL)
+105.	    {
+106.	        printf("No elements in a tree to display");
+107.	        return;
+108.	    }
+109.	    if (t->l != NULL)    
+110.	        inorder(t->l);
+111.	    printf("%d -> ", t->value);
+112.	    if (t->r != NULL)    
+113.	        inorder(t->r);
+114.	}
+115.	 
+116.	/* To check for the deleted node */
+117.	void delete()
+118.	{
+119.	    int data;
+120.	 
+121.	    if (root == NULL)
+122.	    {
+123.	        printf("No elements in a tree to delete");
+124.	        return;
+125.	    }
+126.	    printf("Enter the data to be deleted : ");
+127.	    scanf("%d", &data);
+128.	    t1 = root;
+129.	    t2 = root;
+130.	    search1(root, data);
+131.	}
+132.	 
+133.	/* To find the preorder traversal */
+134.	void preorder(struct btnode *t)
+135.	{
+136.	    if (root == NULL)
+137.	    {
+138.	        printf("No elements in a tree to display");
+139.	        return;
+140.	    }
+141.	    printf("%d -> ", t->value);
+142.	    if (t->l != NULL)    
+143.	        preorder(t->l);
+144.	    if (t->r != NULL)    
+145.	        preorder(t->r);
+146.	}
+147.	 
+148.	/* To find the postorder traversal */
+149.	void postorder(struct btnode *t)
+150.	{
+151.	    if (root == NULL)
+152.	    {
+153.	        printf("No elements in a tree to display ");
+154.	        return;
+155.	    }
+156.	    if (t->l != NULL) 
+157.	        postorder(t->l);
+158.	    if (t->r != NULL) 
+159.	        postorder(t->r);
+160.	    printf("%d -> ", t->value);
+161.	}
+162.	 
+163.	/* Search for the appropriate position to insert the new node */
+164.	void search1(struct btnode *t, int data)
+165.	{
+166.	    if ((data>t->value))
+167.	    {
+168.	        t1 = t;
+169.	        search1(t->r, data);
+170.	    }
+171.	    else if ((data < t->value))
+172.	    {
+173.	        t1 = t;
+174.	        search1(t->l, data);
+175.	    }
+176.	    else if ((data==t->value))
+177.	    {
+178.	        delete1(t);
+179.	    }
+180.	}
+181.	 
+182.	/* To delete a node */
+183.	void delete1(struct btnode *t)
+184.	{
+185.	    int k;
+186.	 
+187.	    /* To delete leaf node */
+188.	    if ((t->l == NULL) && (t->r == NULL))
+189.	    {
+190.	        if (t1->l == t)
+191.	        {
+192.	            t1->l = NULL;
+193.	        }
+194.	        else
+195.	        {
+196.	            t1->r = NULL;
+197.	        }
+198.	        t = NULL;
+199.	        free(t);
+200.	        return;
+201.	    }
+202.	 
+203.	    /* To delete node having one left hand child */
+204.	    else if ((t->r == NULL))
+205.	    {
+206.	        if (t1 == t)
+207.	        {
+208.	            root = t->l;
+209.	            t1 = root;
+210.	        }
+211.	        else if (t1->l == t)
+212.	        {
+213.	            t1->l = t->l;
+214.	 
+215.	        }
+216.	        else
+217.	        {
+218.	            t1->r = t->l;
+219.	        }
+220.	        t = NULL;
+221.	        free(t);
+222.	        return;
+223.	    }
+224.	 
+225.	    /* To delete node having right hand child */
+226.	    else if (t->l == NULL)
+227.	    {
+228.	        if (t1 == t)
+229.	        {
+230.	            root = t->r;
+231.	            t1 = root;
+232.	        }
+233.	        else if (t1->r == t)
+234.	            t1->r = t->r;
+235.	        else
+236.	            t1->l = t->r;
+237.	        t == NULL;
+238.	        free(t);
+239.	        return;
+240.	    }
+241.	 
+242.	    /* To delete node having two child */
+243.	    else if ((t->l != NULL) && (t->r != NULL))  
+244.	    {
+245.	        t2 = root;
+246.	        if (t->r != NULL)
+247.	        {
+248.	            k = smallest(t->r);
+249.	            flag = 1;
+250.	        }
+251.	        else
+252.	        {
+253.	            k =largest(t->l);
+254.	            flag = 2;
+255.	        }
+256.	        search1(root, k);
+257.	        t->value = k;
+258.	    }
+259.	 
+260.	}
+261.	 
+262.	/* To find the smallest element in the right sub tree */
+263.	int smallest(struct btnode *t)
+264.	{
+265.	    t2 = t;
+266.	    if (t->l != NULL)
+267.	    {
+268.	        t2 = t;
+269.	        return(smallest(t->l));
+270.	    }
+271.	    else    
+272.	        return (t->value);
+273.	}
+274.	 
+275.	/* To find the largest element in the left sub tree */
+276.	int largest(struct btnode *t)
+277.	{
+278.	    if (t->r != NULL)
+279.	    {
+280.	        t2 = t;
+281.	        return(largest(t->r));
+282.	    }
+283.	    else    
+284.	        return(t->value);
+285.    }

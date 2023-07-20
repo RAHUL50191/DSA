@@ -1,0 +1,52 @@
+1)Synopsis-
+Our approach is to analyze situations and provide solutions according to analyzing data.
+the major reasons for dropout are:
+1)Poor teaching quality: Teacher lack teaching skills. they don't take their job seriously due to which students lose interest in their studies.
+2)Poor facilities: no proper facilities provided by the institution, ultimately students can't feel comfortable,
+3)Poor financial condition(private schools):
+in some private institutions fees are too high which may be a reason for dropouts,
+4)Student: lack of confidence: student can't perform well in exams and feel anxiety about exams  ,
+5)Discouraging environment: people around  the student are not a good example for getting an education ,they think education is a waste of money and time so they discourage him/her for it
+
+
+2)literature-
+1)The Indian government has been trying to enhance the quality of education since the time of independence. There have been numerous policies and schemes that aimed at providing better education for everyone, irrespective of caste and religion. Indian constitution 
+(Eighty-sixth Amendment) Act, 2002 inserted Article 21-A in the Constitution of India to provide free and compulsory education of all children in the age group of six to fourteen years as a Fundamental Right.2)Public interest advertisement for gender equality education.3)NGO provides  support spread awareness about gender equality etc.
+
+
+3)What would be your approach to solve the problem
+
+Our approach is to resolve the reasons -
+1)Poor teaching quality,
+2)Poor facilities,
+3)Poor financial condition(private schools),
+4)Student: lack of confidence
+5)Discouraging environment
+
+This software provides an analytical diagram of -
+1)student dropout according to area-wise, gender-wise, cast-wise & age-wise, On top of that our software can be used to find and notify nearby NGOs to convey the benefits & necessity of education. (it resolves discouraging environment ,area-wise dropout and educates about right 21A)
+2)analytic diagram for school facility
+3)Rating teacher qualification : it provides rating of each teacher in institution by getting feedback from former students of the school
+
+
+4)Tools and technologies to be used to solve the problem
+1)Data analysis using python and SQL :
+python is a powerful high-level programming language that is used for general-purpose programming. Python supports both structured and functional programming methods. Its extensive collection of libraries makes it very useful in data analysis. Knowledge of Tensorflow, Theano, Keras, Matplotlib, Scikit-learn, and Keras can get you a lot closer to your dream of becoming a machine learning engineer. Everything in python is an object and this attribute makes it highly popular among developers
+2)Fullstack-development: (html,cs,javascript,nodejs,mongodb,react)provide webpage showing data analysis ,and education department member can update data for present year
+3)Power by:The Power BI tool is the collection of apps, data connectors, and software services that are used to get the data from different data sources, transform data, and produce useful reports.
+
+
+5)Challenges/Risk in implementing your Final prototype
+user can clearly identify the reason of student dropout,and resolve then using website or application.On over side we provide better communication between user(education department and social workers).maintaining database of each year of student dropout by category, provide
+server, the better response of NGO and student side.
+
+
+6)Possible outcome of your work
+
+user can identify the reason for student dropout, and resolve them using website or application. On over side, we provide better communication between the users (education department and social workers) and NGO.better analysis of the facilities of the school and teachers' abilities.
+moreover this will provide a nationwide data base for student enrollment for studies and the education rate of each state, or village so that we can provide schools near remote villages and aware. cast wise and gender wise dropouts will be reduced because of NGO awareness programs
+
+7)Work done till date
+website preview using python ,html ,react ,css ,javascript
+
+6)

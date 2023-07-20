@@ -1,0 +1,46 @@
+bool isSubTree(Node* T, Node* S) 
+    {
+        // Your code here
+        struct Node*temp=search(T,S->data);
+        struct Node*lc=temp->left;
+        struct Node*rc=temp->right;
+        struct Node*ls=S->left;
+        struct Node*rs=S->right;
+        //left
+        
+        return true && leftchecker(lc,ls) && rightchecker(lc,ls);
+        
+    }
+    bool leftchecker(Node* lc,Node* ls)
+    {
+     
+        if(lc==NULL)return true;
+        if(lc->data!=ls->data)
+        return false;
+    
+        return true && leftchecker(lc->left,ls->left) && rightchecker(lc->right,ls->right);
+    
+    }
+    
+    bool rightchecker(Node* rc,Node* rs)
+    {
+        if(rc==NULL)return true;
+        if(rc->data!=rs->data)
+        return false;
+        
+        return true && leftchecker(rc->left,rs->left) && rightchecker(rc->right,rs->right);
+    }
+    
+    Node * search(Node * x,int d)
+    {   
+        struct Node* newnode=NULL;
+        if(x->data==d)
+            newnode=x;
+        else{
+            if(newnode==NULL && x->left!=NULL)
+            newnode=search(x->left,d);
+            if(newnode==NULL && x->right!=NULL)
+            newnode=search(x->right,d);
+        }
+        return newnode;
+    }
