@@ -1,0 +1,6 @@
+sum=0
+print("The first n posititive numbers having the sum less than 100 are:")
+for i in range(1,100):
+	sum=sum+i
+	if(sum<=100):
+		print(i,end=" ")

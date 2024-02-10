@@ -1,0 +1,12 @@
+# First list
+list1 = [1, 2, 3, 4]
+
+# Second list
+list2 = [1, 2]
+
+# print list difference
+
+# write your logical code here
+for x in list2:
+    list1.remove(x)
+print(list1)

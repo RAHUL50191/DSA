@@ -1,0 +1,9 @@
+lst =[1, 1, 1,2, 2, 3, 4, 2, 2, 5, 5,2, 2, 5]
+
+length = len(lst)
+element = int(input( "Enter element :")) 
+print(lst.count(element))
+
+count = 0
+
+# write your logical code here

@@ -1,0 +1,19 @@
+a=int(input("Please input the first number"))
+b=int(input("Please input the second number"))
+c=int(input("Please input the third number"))
+
+
+
+print('The Numbers inputted by you are', a, b, c)
+
+if a>b:
+	if a>c: 
+		n=a
+	else:
+		n=c
+else:
+	if b>c:
+		n=b 
+	else:
+		n=c
+print('The greatest number is:', n)

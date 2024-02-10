@@ -1,0 +1,20 @@
+def bubbleSort(alist):
+    num=len(alist)
+    for i in range(num):
+        for j in range(num):
+            # write code here
+            # print(alist[i],alist[j],end=" ")
+            if(alist[i]<alist[j]):
+                temp=alist[i]
+                alist[i]=alist[j]
+                alist[j]=temp
+            
+
+# list of elements
+alist = [56,21,97,18,74,38,14,65,2]
+
+# pass the list in bubbleSort function for sorting
+bubbleSort(alist)
+
+# print sorted list
+print(alist)

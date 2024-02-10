@@ -1,0 +1,12 @@
+def calc_fact(a)->int:
+	if(a>0):
+		ans=1
+		while a>=1:
+			ans*=a
+			a-=1
+		return ans
+	else:
+		n=int(input("Please input any positive number to calculate it's factorial\n"))
+n=int(input("Please input any positive number to calculate it's factorial\n"))
+print("factorial of", n, "is",calc_fact(n))
+print()

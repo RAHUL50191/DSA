@@ -1,0 +1,18 @@
+def fib(n):
+	n1=0
+	n2=1
+	if n<=0:
+		print ("Please input any positive value as a term.\n")
+	elif n==1:
+		print ("The series up to", n, "term is", n1)
+	else:
+		print ("The series up to", n, "term is")
+		print(n1)
+		print(n2)
+		for i in range(n):
+			n3=n2+n1
+			print(n3)
+			n1=n2
+			n2=n3
+n=int(input( "Please input the number of the term of the series."))
+fib(n)

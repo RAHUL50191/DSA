@@ -1,0 +1,6 @@
+def squaresum(x,f):
+	sum=0
+	for i in range(1,11):
+		sum+=f(i)
+	return sum
+print(squaresum(10, lambda x:x*x))

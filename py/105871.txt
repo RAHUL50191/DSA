@@ -1,0 +1,18 @@
+# change this value for a different output
+my_str = 'levesl'
+
+# make it suitable for caseless comparison
+# write code here
+
+# reverse the string
+# write code here
+x=len(my_str)-1
+rev_str=""
+while x>=0 :
+   rev_str+=my_str[x]
+   x-=1
+# check if the string is equal to its reverse
+if list(my_str) == list(rev_str):
+   print("It is palindrome")
+else:
+   print("It is not palindrome")
